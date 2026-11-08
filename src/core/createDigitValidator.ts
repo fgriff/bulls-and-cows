@@ -1,7 +1,9 @@
-import type { Base } from './types.js';
+import { DIGITS_BY_BASE, type Base } from './types.js';
 
 export type DigitValidator = (char: string) => boolean;
 
-export function createDigitValidator(_base: Base): DigitValidator {
-  throw new Error('not implemented');
+export function createDigitValidator(base: Base): DigitValidator {
+  const alphabet = DIGITS_BY_BASE[base];
+
+  return (char: string): boolean => char.length === 1 && alphabet.includes(char.toLowerCase());
 }
