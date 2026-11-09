@@ -1,0 +1,23 @@
+const memo = new Map();
+export function countPossibleSecrets(length, base) {
+    return memoize(length, base);
+}
+function memoize(length, base) {
+    const key = `${length}:${base}`;
+    const cached = memo.get(key);
+    if (cached !== undefined) {
+        return cached;
+    }
+    const result = compute(length, base);
+    memo.set(key, result);
+    return result;
+}
+function compute(length, base) {
+    if (length === 0) {
+        return 1;
+    }
+    if (length > base) {
+        return 0;
+    }
+    return base * compute(length - 1, base - 1);
+}
