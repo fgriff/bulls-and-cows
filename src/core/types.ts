@@ -47,3 +47,11 @@ export type SubmitResult =
   | { kind: 'attempt'; state: GameState };
 
 export type Clock = () => number;
+
+export type RecordEntry = {
+  id: string;
+  config: { length: number; base: Base };
+  attempts: number;
+  durationMs: number;
+  at: number;
+};
