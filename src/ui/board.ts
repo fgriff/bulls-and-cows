@@ -21,7 +21,7 @@ export function renderBoard(props: BoardProps): HTMLElement {
     type: 'text',
     className: 'guess-input',
     maxLength: state.config.length,
-    placeholder: `Введите ${state.config.length} цифр`,
+    placeholder: `Введите число из ${state.config.length} знаков`,
   });
 
   input.addEventListener('beforeinput', (e) => {
