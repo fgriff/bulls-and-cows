@@ -69,7 +69,7 @@ export function renderBoard(props: BoardProps): HTMLElement {
     ? elem('p', { className: 'status' }, [
         `Победа! Попыток: ${state.history.length}, время: ${Math.round(
           (state.finishedAt - state.startedAt) / 1000,
-        )} с`,
+        )} сек.`,
       ])
     : elem('p', { className: 'status' }, ['Игра идет']);
 

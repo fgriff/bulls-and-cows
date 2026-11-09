@@ -7,8 +7,8 @@ export function renderRecords(records: readonly RecordEntry[]): HTMLElement {
   for (const r of records) {
     list.append(
       elem('li', {}, [
-        `${r.attempts} попыток, ${Math.round(r.durationMs / 1000)} с — ` +
-          `длина ${r.config.length}, база ${r.config.base}`,
+        `попыток: ${r.attempts}; время: ${Math.round(r.durationMs / 1000)} сек.; ` +
+          `длина: ${r.config.length}; база: ${r.config.base}`,
       ]),
     );
   }
