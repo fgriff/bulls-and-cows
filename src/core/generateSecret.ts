@@ -1,9 +1,22 @@
-import type { Base, Random } from './types.js';
+import { DIGITS_BY_BASE, type Base, type Random } from './types.js';
 
-export function generateSecret(
-  _length: number,
-  _base: Base,
-  _random: Random = Math.random,
-): string {
-  throw new Error('not implemented');
+export function generateSecret(length: number, base: Base, random: Random = Math.random): string {
+  const alphabet = DIGITS_BY_BASE[base];
+
+  const pickUnique = (acc: readonly string[]): string[] => {
+    if (acc.length === length) {
+      return [...acc];
+    }
+
+    const idx = Math.floor(random() * alphabet.length);
+    const char = alphabet[idx];
+
+    if (acc.includes(char)) {
+      return pickUnique(acc);
+    }
+
+    return pickUnique([...acc, char]);
+  };
+
+  return pickUnique([]).join('');
 }
