@@ -1,16 +1,6 @@
 import { generateSecret } from '../../core/generateSecret';
-import { DIGITS_BY_BASE, Random } from '../../core/types';
-
-function mockRandom(values: number[]): Random {
-  let i = 0;
-
-  return () => {
-    const v = values[i % values.length];
-    i++;
-
-    return v;
-  };
-}
+import { DIGITS_BY_BASE } from '../../core/types';
+import { mockRandom } from '../../test-utils/mockRandom';
 
 describe('generateSecret', () => {
   test('Возвращает строку заданной длины', () => {
