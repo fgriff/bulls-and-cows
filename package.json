@@ -9,7 +9,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "jest",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json && node build.js",
     "prepare": "husky"
   },
   "lint-staged": {
