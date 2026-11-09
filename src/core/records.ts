@@ -1,17 +1,23 @@
 import { RecordEntry } from './types';
 
-export function sortRecords(_records: readonly RecordEntry[]): readonly RecordEntry[] {
-  throw new Error('not implemented');
+export function sortRecords(records: readonly RecordEntry[]): readonly RecordEntry[] {
+  return [...records].sort((a, b) => {
+    if (a.attempts !== b.attempts) {
+      return a.attempts - b.attempts;
+    }
+
+    return a.durationMs - b.durationMs;
+  });
 }
 
-export function topN(_records: readonly RecordEntry[], _n: number): readonly RecordEntry[] {
-  throw new Error('not implemented');
+export function topN(records: readonly RecordEntry[], n: number): readonly RecordEntry[] {
+  return sortRecords(records).slice(0, n);
 }
 
 export function addRecord(
-  _records: readonly RecordEntry[],
-  _entry: RecordEntry,
-  _maxSize = 10,
+  records: readonly RecordEntry[],
+  entry: RecordEntry,
+  maxSize = 10,
 ): readonly RecordEntry[] {
-  throw new Error('not implemented');
+  return topN([...records, entry], maxSize);
 }
