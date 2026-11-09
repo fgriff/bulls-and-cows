@@ -1,8 +1,8 @@
-import { evaluateGuess } from './evaluateGuess';
-import { generateSecret } from './generateSecret';
-import { appendAttempt, findAttempt, isWin } from './history';
-import { isValidGuess } from './isValidGuess';
-import type { Clock, GameConfig, GameState, Random, SubmitResult } from './types';
+import { evaluateGuess } from './evaluateGuess.js';
+import { generateSecret } from './generateSecret.js';
+import { appendAttempt, findAttempt, isWin } from './history.js';
+import { isValidGuess } from './isValidGuess.js';
+import type { Clock, GameConfig, GameState, Random, SubmitResult } from './types.js';
 
 export function startGame(config: GameConfig, random: Random, clock: Clock): GameState {
   const secret = generateSecret(config.length, config.base, random);

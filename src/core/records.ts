@@ -1,4 +1,4 @@
-import { RecordEntry } from './types';
+import { RecordEntry } from './types.js';
 
 export function sortRecords(records: readonly RecordEntry[]): readonly RecordEntry[] {
   return [...records].sort((a, b) => {

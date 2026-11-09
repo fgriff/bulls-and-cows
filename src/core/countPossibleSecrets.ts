@@ -1,4 +1,4 @@
-import type { Base } from './types.js';
+import { Base } from './types.js';
 
 const memo = new Map<string, number>();
 

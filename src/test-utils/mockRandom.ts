@@ -1,4 +1,4 @@
-import { Random } from '../core/types';
+import { Random } from '../core/types.js';
 
 export function mockRandom(values: number[]): Random {
   let i = 0;

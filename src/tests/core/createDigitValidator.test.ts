@@ -1,5 +1,5 @@
-import { createDigitValidator } from '../../core/createDigitValidator.js';
-import type { Base } from '../../core/types.js';
+import { createDigitValidator } from '../../core/createDigitValidator';
+import { Base } from '../../core/types';
 
 describe('createDigitValidator', () => {
   describe('Двоичная система (base 2)', () => {

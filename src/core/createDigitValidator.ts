@@ -1,4 +1,4 @@
-import { DIGITS_BY_BASE, type Base } from './types.js';
+import { Base, DIGITS_BY_BASE } from './types.js';
 
 export type DigitValidator = (char: string) => boolean;
 

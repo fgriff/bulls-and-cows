@@ -1,4 +1,4 @@
-import { DIGITS_BY_BASE, type Base, type Random } from './types.js';
+import { Base, DIGITS_BY_BASE, Random } from './types.js';
 
 export function generateSecret(length: number, base: Base, random: Random = Math.random): string {
   const alphabet = DIGITS_BY_BASE[base];

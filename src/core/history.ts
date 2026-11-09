@@ -1,4 +1,4 @@
-import { Evaluation } from './evaluateGuess';
+import { Evaluation } from './evaluateGuess.js';
 
 export type Attempt = { guess: string; bulls: number; cows: number };
 

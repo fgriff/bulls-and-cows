@@ -1,5 +1,5 @@
 import { createDigitValidator } from './createDigitValidator.js';
-import type { Base } from './types.js';
+import { Base } from './types.js';
 
 export function isValidGuess(guess: string, length: number, base: Base): boolean {
   const isDigit = createDigitValidator(base);
